@@ -1,0 +1,13 @@
+# what is an agent (agent in LLM follow below loop)
+
+    User Query
+    ↓
+    LLM reasoning
+    ↓
+    Select Tool
+    ↓
+    Execute Action
+    ↓
+    Observe Result
+    ↓
+    Repeat until done
