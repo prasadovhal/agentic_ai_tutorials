@@ -1,0 +1,34 @@
+# without self ask
+
+    User Query
+        ↓
+    Retriever
+        ↓
+    LLM
+
+# with self ask
+
+    User Query
+        ↓
+    Self-Ask Node
+    (split question)
+        ↓
+    Sub Questions
+        ↓
+    Retriever / Tools
+        ↓
+    Answers
+        ↓
+    Final Synthesizer
+
+# what is self ask
+- Adding Self-Ask reasoning to your LangGraph Agentic RAG means letting the agent break a complex query into smaller sub-questions, 
+- answer them individually (via retrieval/tools), and then combine the results.
+
+example
+
+- without : Compare Tesla vs BYD revenue and explain which company dominates EV market
+- with :
+    Q1: What is Tesla revenue?
+    Q2: What is BYD revenue?
+    Q3: Which company dominates EV market?

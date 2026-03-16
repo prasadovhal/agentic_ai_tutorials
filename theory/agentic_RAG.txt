@@ -29,3 +29,91 @@
     Reflection
         ↓
     Final Answer
+
+
+
+
+# Final Graph Architecture
+
+          ┌───────────┐
+          │   START   │
+          └─────┬─────┘
+                │
+                ▼
+           ┌─────────┐
+           │  agent  │
+           └────┬────┘
+        yes     │     no
+        ▼       │
+   ┌────────┐   │
+   │retrieve│   │
+   └────┬───┘   │
+        ▼       ▼
+        ┌─────────┐
+        │ answer  │
+        └────┬────┘
+             ▼
+            END
+
+# State fields -> graph stores these fileds
+
+{
+ "query": str,
+ "context": str,
+ "answer": str,
+ "route": str,
+}
+
+# entry field 
+    - graph.add_edge(START, "agent")
+    - Defines where execution begins.
+
+# End Node
+    - graph.add_edge("answer", END)
+    - graph.add_edge("answer", END)
+
+# graph compile
+    - app = graph.compile()
+    - This converts the graph into an executable workflow.
+
+
+
+# Minimal agentic RAG
+
+        User Query
+            │
+            ▼
+        Agent Decision
+        (Need retrieval?)
+            │
+        ┌───┴─────────────┐
+        │                 │
+        ▼                 ▼
+        Retrieve Docs     Skip Retrieval
+        (Vector DB)          │
+        │                   │
+        └───────► Answer Generation ◄──────┘
+                    (LLM)
+                        │
+                        ▼
+                    Output
+
+
+# Full Agentic RAG Architecture 
+
+    User Query
+        ↓
+    Router Agent
+        ↓
+    Planner
+        ↓
+    Tool Execution
+    ├ Retriever
+    ├ Search
+    ├ Calculator
+        ↓
+    Memory
+        ↓
+    Reflection
+        ↓
+    Final Answer
