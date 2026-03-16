@@ -1,0 +1,54 @@
+# LLM-as-a-Judge:
+- LLM-as-a-Judge means using another LLM to evaluate the output of your RAG/agent system instead of human labeling. 
+- The judge LLM analyzes the question, retrieved context, and generated answer and returns a score or classification.
+- This approach works well because LLMs can evaluate semantic correctness, relevance, and grounding, which traditional metrics like BLEU cannot capture.
+
+# Architecture
+
+    User Query
+        │
+        ▼
+    RAG System (retriever + LLM)
+        │
+        ▼
+    Generated Answer
+        │
+        ▼
+    LLM Judge (Input: question + context + answer)
+        │
+        ▼
+    Score / JSON metrics
+
+
+# example output
+
+    {
+    "answer_relevance": 0.9,
+    "faithfulness": 0.85,
+    "hallucination": 0.1,
+    "reason": "Answer supported by retrieved context"
+    }
+
+# Add Statement-Level Evaluation (Advanced)
+
+    Better evaluation:
+    - Split answer into statements
+    - Judge each statement
+    - Aggregate
+
+    Example:
+
+    Answer:
+    "Tesla was founded by Elon Musk in 2003."
+
+    Statements:
+
+    1. Tesla was founded in 2003
+    2. Elon Musk founded Tesla
+
+# Advanced Judge Techniques
+
+ - Pairwise Judge : Compare two answers.
+ - G-Eval (Best technique) : Uses reasoning steps.
+ - Multi-Judge Voting: Final score = average.
+ 

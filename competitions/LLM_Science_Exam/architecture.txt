@@ -1,0 +1,29 @@
+Question
+   │
+   ▼
+Query Rewrite Agent
+   │
+   ▼
+Self-Ask Agent
+   │
+   ▼
+Hybrid Retrieval
+(BM25 + Dense)
+   │
+   ▼
+Adaptive Chunk Selection
+   │
+   ▼
+Cross Encoder Reranker
+   │
+   ▼
+Reasoning Agent
+   │
+   ▼
+Reflection Agent
+   │
+   ▼
+Answer Generator
+   │
+   ▼
+LLM Judge Evaluation
