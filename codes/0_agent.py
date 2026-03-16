@@ -66,3 +66,20 @@ tools = [
             }
     }
 ]
+
+from langchain.tools import tool
+
+@tool
+def calculator(expression:str):
+    """
+    
+
+    Args:
+        expression (str): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    return eval(expression)
+
+tools = [calculator]

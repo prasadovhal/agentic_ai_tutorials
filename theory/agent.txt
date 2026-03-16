@@ -1,13 +1,128 @@
-# what is an agent (agent in LLM follow below loop)
+# what is an agent?
+   * Parts of an agent
+        - The Brain (The Model) : LLM, To understand the "Why."
+        - Planning (The Strategy): To figure out the "How."
+        - Memory (The Notebook): To remember the "What."
+            - Short-term Memory: for current conversation
+            - Long-term Memory: for past conversations
+        - Tools (The Hands): To actually "Do" the work.
 
-    User Query
-    ↓
-    LLM reasoning
-    ↓
-    Select Tool
-    ↓
-    Execute Action
-    ↓
-    Observe Result
-    ↓
-    Repeat until done
+    * agent in LLM follow below loop
+        User Query
+        ↓
+        LLM reasoning
+        ↓
+        Select Tool
+        ↓
+        Execute Action
+        ↓
+        Observe Result
+        ↓
+        Repeat until done
+
+* Tools that an agent can Use
+
+    ---------------------------------------------------------------------------------------------
+    USE CASE                | RECOMMENDED TOOL | CORE PHILOSOPHY
+    ---------------------------------------------------------------------------------------------
+    Complex Logic/Loops     | LangGraph        | Graph-based state machines; precise control.
+    ---------------------------------------------------------------------------------------------
+    Team-based Automation   | CrewAI           | Role-playing; easy delegation and backstories.
+    ---------------------------------------------------------------------------------------------
+    Self-Healing Code       | AutoGen          | Conversational; seamless Docker execution.
+    ---------------------------------------------------------------------------------------------
+    Data-Heavy RAG          | LlamaIndex       | Data-centric; advanced indexing and synthesis.
+    ---------------------------------------------------------------------------------------------
+    Reliability/Tracing     | LangSmith        | Full-stack observability and evaluation.
+    ---------------------------------------------------------------------------------------------
+
+* memory of agent
+    Short term - Used within conversation
+    long term - Stored externally (VectorDB, Database, knowledge Graph)
+    ====================================================================================
+    MEMORY STRATEGY FOR AGENTIC AI
+    ====================================================================================
+
+    SCENARIO                                | PRIMARY MEMORY | IMPLEMENTATION STRATEGY
+    ----------------------------------------|----------------|--------------------------
+    "What did I just say?"                  | Short-Term     | Conversation Buffer / Thread State
+    "How did we solve this last month?"     | Long-Term      | Vector Search (Semantic/Episodic RAG)
+    "What are my coding style preferences?" | Long-Term      | Profile-based metadata injection
+    "Run these 5 steps in order."           | Short-Term     | Sequential State Handoff
+    "Summarize this 500-page PDF."          | Hybrid         | LTM for retrieval, STM for synthesis
+
+    ====================================================================================
+
+* Action
+    - transition from Inference to Effect.
+    - Inference : thinking phase, to lay out Planning
+    - Effect : Doing phase, check all pre things needed for outcome
+
+* tool-calling agent
+    - orchestrated system that uses the model as a "reasoning engine" to interact with your stack.
+    - allow an LLM to use external tools (functions/APIs/code) instead of trying to answer everything from its internal knowledge.
+    - difference between tool and tool-calling agent
+        - Tool = capability, a function or external capability that performs a specific task.
+        - Tool Calling Agent = decision maker that uses tools, LLM system that decides which tool to use and calls it automatically.
+
+* ReAct Agent (Reason + Act)
+    - Flow
+        Thought → Action → Observation
+        Thought → Action → Observation
+        Final Answer
+    - prompt template
+        Thought: reasoning
+        Action: tool_name[input]
+        Observation: result
+
+* Planning Agents
+    - Instead of step-by-step reaction, agents plan ahead.
+    - architechure
+            User Query
+                ↓
+            Planner
+                ↓
+            Task List
+                ↓
+            Executor Agent
+                ↓
+            Tools
+
+* Reflection (Self Improvement)
+    - Agent checks its own output.
+    - Answer → Critique → Improve
+
+* Self Ask
+    - Technique where agent asks itself sub-questions.
+    - 
+
+* Agentic RAG
+    - RAG + tools + reasoning
+    - Classic RAG : query → retrieve → answer
+    - Agentic RAG : query → agent decides → retrieve or search or tool → reason → answer
+
+* Knowledge Graph + Graph RAG
+    - Instead of vector retrieval, retrieve via graph relations.
+    - Graph RAG Pipeline : LLM → Entity extraction → Graph query → context → LLM answer
+
+* Multi-Agent Systems
+    - Multiple agents collaborate. 
+    - example
+        - Research agent
+        - Coding agent
+        - Reviewer agent
+    - Architecture: user → manager agent → worker agent
+
+* Production Agent Systems
+    - Observability, Tools:
+        - LangSmith
+        - Phoenix
+        - Weights & Biases
+    - Agent Evaluation, Metrics:
+        - task success rate
+        - reasoning correctness
+        - tool usage accuracy
+    - Guardrails, Prevent:
+        - hallucination
+        - unsafe actions
+        - wrong tool usage

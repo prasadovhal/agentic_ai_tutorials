@@ -1,0 +1,31 @@
+* Classic RAG
+
+    User Query
+        ↓
+    Retriever
+        ↓
+    Top Documents
+        ↓
+    LLM
+        ↓
+    Answer
+
+* Agentic RAG
+
+    User Query
+        ↓
+    Agent
+        ↓
+    Reasoning
+        ↓
+    Select Tool
+        ↓
+    Retrieve / Search / Calculate
+        ↓
+    Observation
+        ↓
+    Memory
+        ↓
+    Reflection
+        ↓
+    Final Answer

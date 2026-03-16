@@ -1,0 +1,13 @@
+Battery technology is one of the most critical components of electric vehicles.
+
+Most electric vehicles today use lithium-ion batteries due to their high energy density and long cycle life.
+
+Battery cost represents a significant portion of the total cost of an electric vehicle. Reducing battery cost is essential for making EVs more affordable.
+
+Several companies are investing in next generation battery technologies such as solid-state batteries, lithium iron phosphate batteries, and advanced lithium-ion chemistries.
+
+Tesla works with companies such as Panasonic and CATL for battery manufacturing, while also developing its own battery technology.
+
+BYD produces its own Blade Battery, which is based on lithium iron phosphate chemistry and designed to improve safety and durability.
+
+Future innovations in battery technology are expected to increase driving range, reduce charging time, and lower overall costs of electric vehicles.
