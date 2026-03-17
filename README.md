@@ -38,12 +38,20 @@ Understanding Agentic AI and its framework hands on with python
 # Topics included
 
 1. Basics of Agent and its parts
+    - Memory
+    - Tools
+    - Action
+    - Tool calling agent
+    - Reasoning
+    - ReAct Agent
+    - Planning
 2. Simple Agentic RAG
     - Create tools, 
     - How RAG is converted to Agentic RAG
 3. LangGraph
     - Simple Agentic RAG
     - Full Agentic RAG
+    - Relection
 4. Multi Agent Systems
     - using autogen
     - using crewai
