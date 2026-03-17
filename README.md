@@ -3,7 +3,7 @@ Understanding Agentic AI and its framework hands on with python
 
 ## Set up Python & Poetry
 
-1. cd transformers_tutorial
+1. cd agentic_ai_tutorials
 2. install poetry
 `(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -`
 3. run `C:\Users\user_name\AppData\Roaming\Python\Scripts`
@@ -16,7 +16,7 @@ Understanding Agentic AI and its framework hands on with python
 
 ## changes you need to make
 
-1. Create `constant.py` file inside `codes/` folder.
+1. Create `constant.py` in main folder.
 2. Add the following keys inside it:
    - `GOOGLE_API_KEY = "your_google_api_key"`
    - `OPENAI_KEY = "your_openai_key"`
