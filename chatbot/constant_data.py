@@ -1,0 +1,1 @@
+DATA_PATH = "D:/Study/Git_repo/agentic_ai_tutorials/chatbot/data/"

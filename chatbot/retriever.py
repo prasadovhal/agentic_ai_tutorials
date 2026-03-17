@@ -2,7 +2,8 @@ from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
-from chatbot.constant import DATA_PATH
+from chatbot.constant_data import DATA_PATH
+
 def build_retriever():
 
     with open(DATA_PATH + "docs.txt") as f:
