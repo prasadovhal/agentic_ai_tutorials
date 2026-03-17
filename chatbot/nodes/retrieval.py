@@ -1,4 +1,4 @@
-from retriever import build_retriever
+from chatbot.retriever import build_retriever
 
 retriever = build_retriever()
 

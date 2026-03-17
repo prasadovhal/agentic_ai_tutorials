@@ -3616,26 +3616,38 @@ tests = ["aiohttp", "boto3", "datafusion", "duckdb", "pandas (>=1.4)", "polars (
 
 [[package]]
 name = "langchain"
-version = "0.0.27"
+version = "1.2.12"
 description = "Building applications with LLMs through composability"
 optional = false
-python-versions = "*"
+python-versions = "<4.0.0,>=3.10.0"
 groups = ["main"]
 files = [
-    {file = "langchain-0.0.27-py3-none-any.whl", hash = "sha256:a39260732b877b223869151db677c08b4b78fb4611c59fc5918f314d0a9d4227"},
-    {file = "langchain-0.0.27.tar.gz", hash = "sha256:cdaca3a61eb57a76bef990ce3c4615ac06873e83f100bf9c485f6c36e29ed95c"},
+    {file = "langchain-1.2.12-py3-none-any.whl", hash = "sha256:60eff184b8f92c2610f5a4c9a97ad339a891adb01901e83e4df8e6c9c69cf852"},
+    {file = "langchain-1.2.12.tar.gz", hash = "sha256:ed705b5b293799f7e3e394387f398a1b71707542758283206c8c21415759d991"},
 ]
 
 [package.dependencies]
-numpy = "*"
-pydantic = "*"
-pyyaml = "*"
-requests = "*"
-sqlalchemy = "*"
+langchain-core = ">=1.2.10,<2.0.0"
+langgraph = ">=1.1.1,<1.2.0"
+pydantic = ">=2.7.4,<3.0.0"
 
 [package.extras]
-all = ["cohere", "elasticsearch", "faiss-cpu", "google-search-results", "huggingface-hub", "nlpcloud", "nltk", "openai", "sentence-transformers", "spacy", "transformers", "wikipedia"]
-llms = ["cohere", "huggingface-hub", "nlpcloud", "openai"]
+anthropic = ["langchain-anthropic"]
+aws = ["langchain-aws"]
+azure-ai = ["langchain-azure-ai"]
+community = ["langchain-community"]
+deepseek = ["langchain-deepseek"]
+fireworks = ["langchain-fireworks"]
+google-genai = ["langchain-google-genai"]
+google-vertexai = ["langchain-google-vertexai"]
+groq = ["langchain-groq"]
+huggingface = ["langchain-huggingface"]
+mistralai = ["langchain-mistralai"]
+ollama = ["langchain-ollama"]
+openai = ["langchain-openai"]
+perplexity = ["langchain-perplexity"]
+together = ["langchain-together"]
+xai = ["langchain-xai"]
 
 [[package]]
 name = "langchain-classic"
@@ -3834,14 +3846,14 @@ wrapt = ">=1.14,<2.0"
 
 [[package]]
 name = "langgraph"
-version = "1.1.0"
+version = "1.1.2"
 description = "Building stateful, multi-actor applications with LLMs"
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "langgraph-1.1.0-py3-none-any.whl", hash = "sha256:7d29e01312340c9c7c09eb0178db5edd0514c3f35929fa5b32a247fcd9a9cd65"},
-    {file = "langgraph-1.1.0.tar.gz", hash = "sha256:2decaef5d6716166dc5c13e0fdf65637e5a1837ef4c94fd82b6bcf2115cb5c78"},
+    {file = "langgraph-1.1.2-py3-none-any.whl", hash = "sha256:5fd43c839ec2b5af564e9ae2d2d4f22ce0a006a0b58e800cc4e8de4dd9cbb643"},
+    {file = "langgraph-1.1.2.tar.gz", hash = "sha256:c4385ce349823a590891b3f6b1c46b54f51d0134164056866e95034985f047c9"},
 ]
 
 [package.dependencies]
@@ -10740,4 +10752,4 @@ cffi = ["cffi (>=1.17,<2.0) ; platform_python_implementation != \"PyPy\" and pyt
 [metadata]
 lock-version = "2.1"
 python-versions = "3.11.*"
-content-hash = "5a2a101f23dd794e3a5d24847bd4415f6e42af9e59c77eaec621a76489d5caf7"
+content-hash = "c0b92a9a57dff57d049aa393b50b8b439bfb00541bf8ff9b0eecb9f892fb69e3"

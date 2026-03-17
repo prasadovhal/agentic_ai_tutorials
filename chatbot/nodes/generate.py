@@ -1,4 +1,9 @@
-from llm import llm
+import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from chatbot.llm import llm
 
 def generate_node(state):
 

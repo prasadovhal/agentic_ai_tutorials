@@ -1,6 +1,11 @@
+import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from langgraph.graph import StateGraph, END
 
-from state import AgentState
+from chatbot.state import AgentState
 from chatbot.nodes.reflection import reflection_node
 from chatbot.nodes.rewrite import rewrite_node
 from chatbot.nodes.self_ask import self_ask_node
@@ -8,8 +13,8 @@ from chatbot.nodes.retrieval import retrieval_node
 from chatbot.nodes.rerank import rerank_node
 from chatbot.nodes.generate import generate_node
 from chatbot.nodes.judge import judge_node
-from chatbot.evaluation import compute_metrics
-from chatbot.memory import memory_node
+from chatbot.evaluation.metrics import compute_metrics
+from chatbot.memory.memory import memory_node
 
 workflow = StateGraph(AgentState)
 

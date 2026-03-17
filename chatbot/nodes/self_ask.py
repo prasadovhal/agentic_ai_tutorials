@@ -1,3 +1,5 @@
+from chatbot.llm import llm
+
 def self_ask_node(state):
 
     prompt = f"""
